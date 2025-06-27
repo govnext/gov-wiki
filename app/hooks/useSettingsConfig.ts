@@ -15,6 +15,7 @@ import {
   Icon,
   PlusIcon,
   InternetIcon,
+  AcademicCapIcon,
 } from "outline-icons";
 import { ComponentProps } from "react";
 import * as React from "react";
@@ -40,6 +41,7 @@ const Groups = lazy(() => import("~/scenes/Settings/Groups"));
 const Import = lazy(() => import("~/scenes/Settings/Import"));
 const Members = lazy(() => import("~/scenes/Settings/Members"));
 const Notifications = lazy(() => import("~/scenes/Settings/Notifications"));
+const Onboarding = lazy(() => import("~/scenes/Settings/Onboarding"));
 const Preferences = lazy(() => import("~/scenes/Settings/Preferences"));
 const Profile = lazy(() => import("~/scenes/Settings/Profile"));
 const Security = lazy(() => import("~/scenes/Settings/Security"));
@@ -117,6 +119,15 @@ const useSettingsConfig = () => {
         enabled: can.update,
         group: t("Workspace"),
         icon: TeamIcon,
+      },
+      {
+        name: t("Onboarding"),
+        path: settingsPath("onboarding"),
+        component: Onboarding.Component,
+        preload: Onboarding.preload,
+        enabled: can.update,
+        group: t("Workspace"),
+        icon: AcademicCapIcon,
       },
       {
         name: t("Security"),

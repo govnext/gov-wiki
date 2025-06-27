@@ -9,6 +9,7 @@ import Empty from "~/components/Empty";
 import Heading from "~/components/Heading";
 import InputSearchPage from "~/components/InputSearchPage";
 import LanguagePrompt from "~/components/LanguagePrompt";
+import OnboardingBanner from "~/components/OnboardingBanner";
 import PaginatedDocumentList from "~/components/PaginatedDocumentList";
 import PinnedDocuments from "~/components/PinnedDocuments";
 import { ResizingHeightContainer } from "~/components/ResizingHeightContainer";
@@ -46,6 +47,7 @@ function Home() {
     >
       <ResizingHeightContainer>
         {!ui.languagePromptDismissed && <LanguagePrompt key="language" />}
+        <OnboardingBanner />
       </ResizingHeightContainer>
       <Heading>{t("Home")}</Heading>
       <PinnedDocuments
