@@ -1,7 +1,7 @@
 import { Optional } from "utility-types";
 import { ProsemirrorHelper as SharedProsemirrorHelper } from "@shared/utils/ProsemirrorHelper";
 import { TextHelper } from "@shared/utils/TextHelper";
-import { Document, Event, User } from "@server/models";
+import { Document, Event, User, TeamOnboardingSetting, TemplateDocumentMapping } from "@server/models";
 import { DocumentHelper } from "@server/models/helpers/DocumentHelper";
 import { ProsemirrorHelper } from "@server/models/helpers/ProsemirrorHelper";
 import { APIContext } from "@server/types";
@@ -63,12 +63,46 @@ export default async function documentCreator({
   ctx,
 }: Props): Promise<Document> {
   const { transaction, ip } = ctx.context;
-  const templateId = templateDocument ? templateDocument.id : undefined;
+  let templateId = templateDocument ? templateDocument.id : undefined;
 
   if (state && templateDocument) {
     throw new Error(
       "State cannot be set when creating a document from a template"
     );
+  }
+
+  // Check if team has onboarding settings and should use templates on create
+  if (!templateDocument && collectionId && parentDocumentId && title) {
+    const teamSettings = await TeamOnboardingSetting.findOne({
+      where: { teamId: user.teamId },
+      transaction,
+    });
+
+    if (teamSettings?.useTemplatesOnCreate && teamSettings.defaultTemplateId) {
+      // Try to find a document template mapping for this folder path
+      const parentDoc = await Document.findByPk(parentDocumentId, {
+        attributes: ['title'],
+        transaction,
+      });
+
+      if (parentDoc) {
+        const mapping = await TemplateDocumentMapping.findOne({
+          where: {
+            onboardingTemplateId: teamSettings.defaultTemplateId,
+            folderPath: parentDoc.title,
+            useAsDefault: true,
+          },
+          transaction,
+        });
+
+        if (mapping?.documentTemplateId) {
+          templateDocument = await Document.findByPk(mapping.documentTemplateId, {
+            transaction,
+          });
+          templateId = templateDocument?.id;
+        }
+      }
+    }
   }
 
   if (urlId) {

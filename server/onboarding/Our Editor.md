@@ -1,8 +1,30 @@
-The heart of Outline is the document editor. We let you write in whichever way you prefer – be it Markdown, WYSIWYG, or taking advantage of the many keyboard shortcuts (Type `?` to see them all).
+# Nosso Editor
+
+O GovWiki tem um editor poderoso que facilita a criação e formatação de documentos administrativos e técnicos.
+
+## Recursos Principais
+
+- **Markdown**: Escreva em markdown para formatação rápida
+- **Tabelas**: Perfeito para dados estruturados e relatórios
+- **Listas de verificação**: Ideais para procedimentos e checklists
+- **Código**: Blocos de código para documentação técnica
+- **Equações**: Suporte LaTeX para fórmulas matemáticas
+- **Diagramas**: Diagramas Mermaid para fluxogramas e processos
+
+## Atalhos Úteis
+
+- `Ctrl/Cmd + B` - **Negrito**
+- `Ctrl/Cmd + I` - *Itálico*
+- `Ctrl/Cmd + K` - [Link](https://example.com)
+- `Ctrl/Cmd + Shift + 7` - Lista numerada
+- `Ctrl/Cmd + Shift + 8` - Lista com marcadores
+- `[]` + `Espaço` - Lista de verificação
+
+Experimente incorporar qualquer [integração](https://www.getoutline.com/integrations) suportada digitando `/` e selecionando a integração desejada.
 
 ## Markdown
 
-If you’re comfortable writing markdown then all of the shortcuts you are used to are supported, for example type \*\*bold\*\* to instantly create **bold** text. If you forget some syntax or are after a quick refresher hit the keyboard icon in the bottom right hand corner for our guide. Learning some of the key Markdown shortcuts will definitely make using Outline faster and more enjoyable!
+If you're comfortable writing markdown then all of the shortcuts you are used to are supported, for example type \*\*bold\*\* to instantly create **bold** text. If you forget some syntax or are after a quick refresher hit the keyboard icon in the bottom right hand corner for our guide. Learning some of the key Markdown shortcuts will definitely make using Outline faster and more enjoyable!
 
 \
 :::info

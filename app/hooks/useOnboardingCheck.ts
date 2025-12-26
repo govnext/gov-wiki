@@ -32,13 +32,14 @@ export default function useOnboardingCheck() {
 
         // Check if user has any collections
         const hasCollections = collections.orderedData.length > 0;
-        
+
         // Check if user has explicitly dismissed onboarding
-        const hasSkippedOnboarding = localStorage.getItem('govwiki_onboarding_skipped') === 'true';
-        
+        const hasSkippedOnboarding =
+          localStorage.getItem("govwiki_onboarding_skipped") === "true";
+
         setNeedsOnboarding(!hasCollections && !hasSkippedOnboarding);
       } catch (error) {
-        console.error('Error checking onboarding status:', error);
+        console.error("Error checking onboarding status:", error);
         setNeedsOnboarding(false);
       } finally {
         setIsChecking(false);
@@ -49,13 +50,13 @@ export default function useOnboardingCheck() {
   }, [collections, auth.user]);
 
   const skipOnboarding = () => {
-    localStorage.setItem('govwiki_onboarding_skipped', 'true');
+    localStorage.setItem("govwiki_onboarding_skipped", "true");
     setNeedsOnboarding(false);
   };
 
   return {
     needsOnboarding,
     isChecking,
-    skipOnboarding
+    skipOnboarding,
   };
-} 
+}

@@ -1,19 +1,20 @@
-Some ideas to get you and your team started with learning the basics of Outline, feel free to check them off as you go!
+Algumas ideias para você e sua equipe começarem a aprender o básico do GovWiki, sinta-se à vontade para marcá-las conforme for completando!
 
-## Learn the basics
+## Aprenda o básico
 
-- [x] Create an Outline account
-- [ ] **Create a collection** from the left sidebar
-- [ ] **Create a new doc** from the top right of home or any collection
-- [ ] Try drag and drop to nest and move documents
-- [ ] Share a document
-- [ ] Invite a co-worker 👋
+- [x] Criar uma conta no GovWiki
+- [ ] **Criar uma coleção** pela barra lateral esquerda
+- [ ] **Criar um novo documento** no canto superior direito da home ou qualquer coleção
+- [ ] Experimentar arrastar e soltar para aninhar e mover documentos
+- [ ] Compartilhar um documento
+- [ ] Convidar um colega de trabalho 👋
 
-## More to try
+## Mais para experimentar
 
-- [ ] Setup the [Slack integration](/settings/integrations/slack)
-- [ ] **Create a template** to share a writing structure with your team
-- [ ] Create a check list to track tasks
-- [ ] Try embedding a supported [integration](https://www.getoutline.com/integrations)
+- [ ] **Criar um template** para compartilhar uma estrutura de escrita com sua equipe
+- [ ] Criar uma lista de verificação para acompanhar tarefas
+- [ ] Experimentar incorporar uma integração suportada
+- [ ] Configurar permissões de acesso para diferentes níveis hierárquicos
+- [ ] Organizar documentos por departamentos ou secretarias
 
 

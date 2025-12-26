@@ -1,8 +1,8 @@
 {
-  "name": "Outline",
-  "description": "Open source wiki and knowledge base for growing teams",
+  "name": "GovWiki",
+  "description": "Base de conhecimento especializada para órgãos públicos",
   "website": "https://www.getoutline.com/",
-  "repository": "https://github.com/outline/outline",
+  "repository": "https://github.com/govwiki/govwiki",
   "keywords": [
     "wiki",
     "team",

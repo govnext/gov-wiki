@@ -1,18 +1,18 @@
-Outline is a place to build your team knowledge base, you could think of it like your team’s shared library – a place for important documentation, notes, and ideas to live and be discovered. Some things you might want to keep in Outline include:
+O GovWiki é uma plataforma para construir a base de conhecimento da sua organização pública, você pode pensar nela como a biblioteca compartilhada da sua instituição – um lugar para documentação importante, anotações e ideias viverem e serem descobertas. Algumas coisas que você pode querer manter no GovWiki incluem:
 
-\
-- Documentation
-- Support knowledge base
-- Product plans and RFCs
-- Sales playbooks
-- Onboarding checklists
-- Company policies
-- Meeting notes
+- Documentação administrativa
+- Base de conhecimento para atendimento ao cidadão  
+- Planos de projetos e RFCs
+- Manuais de procedimentos
+- Checklists de integração
+- Políticas institucionais
+- Atas de reuniões
+- Regulamentações e normativas
 
-## Structure
+## Estrutura
 
-Outline allows you to organize documents in "collections", for example these could represent topics like Sales, Product, or HR. You can assign users or groups access to collections. Within collections documents can be interlinked and deeply nested to easily build relationships within your knowledge base.
+O GovWiki permite organizar documentos em "coleções", por exemplo, estas podem representar tópicos como Recursos Humanos, Tecnologia da Informação, Atendimento ao Cidadão ou Gestão. Você pode atribuir usuários ou grupos acesso às coleções. Dentro das coleções, os documentos podem ser interligados e profundamente aninhados para facilitar a construção de relacionamentos dentro da sua base de conhecimento.
 
-## Search
+## Busca
 
-Outline is built from the ground up to be really fast, and that includes [search](/search). You can start searching from anywhere with the `CMD+K` shortcut – then filter by time, author, and more to find the information you need. Or you can search from within Slack with the `/outline` slash command.
+O GovWiki foi construído desde o início para ser muito rápido, e isso inclui a [busca](/search). Você pode começar a pesquisar de qualquer lugar com o atalho `CMD+K` – depois filtrar por tempo, autor e mais para encontrar as informações que precisa.

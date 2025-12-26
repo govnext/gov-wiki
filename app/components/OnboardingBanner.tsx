@@ -1,3 +1,4 @@
+import { CloseIcon } from "outline-icons";
 import * as React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
@@ -5,56 +6,60 @@ import { s } from "@shared/styles";
 import Button from "~/components/Button";
 import Flex from "~/components/Flex";
 import Text from "~/components/Text";
-import { CloseIcon } from "outline-icons";
 import useOnboardingCheck from "~/hooks/useOnboardingCheck";
 
 const OnboardingBanner = () => {
-    const history = useHistory();
-    const { needsOnboarding, skipOnboarding } = useOnboardingCheck();
+  const history = useHistory();
+  const { needsOnboarding, skipOnboarding } = useOnboardingCheck();
 
-    if (!needsOnboarding) {
-        return null;
-    }
+  if (!needsOnboarding) {
+    return null;
+  }
 
-    const handleStartOnboarding = () => {
-        history.push("/settings/onboarding");
-    };
+  const handleStartOnboarding = () => {
+    history.push("/settings/onboarding");
+  };
 
-    const handleSkip = () => {
-        skipOnboarding();
-    };
+  const handleSkip = () => {
+    skipOnboarding();
+  };
 
-    return (
-        <Banner>
-            <Content>
-                <Flex align="center" gap={16}>
-                    <div>
-                        <Text size="large" weight="medium">
-                            🎉 Bem-vindo ao GovWiki!
-                        </Text>
-                        <Text color="secondary">
-                            Configure sua organização em poucos minutos com nosso assistente de configuração.
-                        </Text>
-                    </div>
-                    <ButtonGroup>
-                        <Button onClick={handleStartOnboarding} primary>
-                            Começar Configuração
-                        </Button>
-                        <Button onClick={handleSkip} neutral>
-                            Pular
-                        </Button>
-                    </ButtonGroup>
-                </Flex>
-                <CloseButton onClick={handleSkip}>
-                    <CloseIcon size={20} />
-                </CloseButton>
-            </Content>
-        </Banner>
-    );
+  return (
+    <Banner>
+      <Content>
+        <Flex align="center" gap={16}>
+          <div>
+            <Text size="large" weight="medium">
+              🎉 Bem-vindo ao GovWiki!
+            </Text>
+            <Text color="secondary">
+              Configure sua organização em poucos minutos com nosso assistente
+              de configuração.
+            </Text>
+          </div>
+          <ButtonGroup>
+            <Button onClick={handleStartOnboarding} primary>
+              Começar Configuração
+            </Button>
+            <Button onClick={handleSkip} neutral>
+              Pular
+            </Button>
+          </ButtonGroup>
+        </Flex>
+        <CloseButton onClick={handleSkip}>
+          <CloseIcon size={20} />
+        </CloseButton>
+      </Content>
+    </Banner>
+  );
 };
 
 const Banner = styled.div`
-  background: linear-gradient(90deg, ${s("accent")} 0%, ${s("accentDark")} 100%);
+  background: linear-gradient(
+    90deg,
+    ${s("accent")} 0%,
+    ${s("accentDark")} 100%
+  );
   color: ${s("accentText")};
   padding: 1rem;
   margin-bottom: 1rem;
@@ -96,4 +101,4 @@ const CloseButton = styled.button`
   }
 `;
 
-export default OnboardingBanner; 
+export default OnboardingBanner;

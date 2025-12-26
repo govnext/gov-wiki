@@ -1,31 +1,39 @@
-## Integrations
+# Integrações e API
 
-Outline supports many of the most popular tools on the market without any additional settings or configuration. Just paste links to a YouTube video, Figma file, or Google Spreadsheet to get instant live-embeds in your documents. Take a look at the [integrations directory](https://www.getoutline.com/integrations) for a list of all of the tools that are supported.
+O GovWiki oferece várias maneiras de integrar com sistemas já utilizados pela sua organização pública.
 
-\
-Our integration code is also [open-source](https://github.com/outline/outline) and we encourage third party developers and the community to build support for additional tools! 
+## Integrações Incorporadas
 
-\
-:::info
-Most integrations work by simply pasting a link from a supported service into a document.
-:::
+Você pode incorporar conteúdo de outras ferramentas diretamente em seus documentos. Visite o [diretório de integrações](https://www.getoutline.com/integrations) para uma lista completa das ferramentas suportadas.
 
+Para incorporar conteúdo, digite `/` no editor seguido do nome da ferramenta (por exemplo, `/figma` ou `/miro`). Cole o link e o conteúdo aparecerá automaticamente no seu documento.
 
-## Slack
+## Autenticação única (SSO)
 
-If your team is using Slack to communicate then you’ll definitely want to enable our [Slack Integration](/settings/integrations/slack) to get instant link unfurling for Outline documents and access to the `/outline` slash command to search your knowledge base directly from Slack.
+Para organizações públicas que utilizam sistemas de autenticação centralizados, o GovWiki suporta:
+
+- Google Workspace / Gmail
+- Microsoft Azure AD
+- OIDC (OpenID Connect)
+- SAML 2.0
 
 ## API
 
-Have some technical skills? Outline is built on a fully featured RPC-style [API](https://www.getoutline.com/developers). Create (or even append to) documents, collections, provision users, and more programmatically. All documents are edited and stored in markdown format – try out this example CURL request to get started:
+Tem conhecimentos técnicos? O GovWiki é construído sobre uma API completamente funcional no estilo RPC. Crie (ou até mesmo anexe a) documentos, coleções, provisione usuários e muito mais programaticamente. Todos os documentos são editados e armazenados em formato markdown – experimente este exemplo:
 
 ```bash
-curl -XPOST -H "Content-type: application/json" -d '{
-  "title": "My first document",
-  "text": "Hello from the API 👋",
-  "collectionId": "COLLECTION_ID", // find the collection id in the URL bar
-  "token": "API_TOKEN", // get an API token from https://www.getoutline.com/settings/tokens
+curl -X POST -H 'authorization: Bearer API_TOKEN' -H 'content-type: application/json' -d '{
+  "title": "Novo documento via API",
+  "text": "# Esta é uma API incrível",
+  "collectionId": "YOUR_COLLECTION_ID",
   "publish": true
-}' 'https://www.getoutline.com/api/documents.create'
+}' 'https://seudominio.com/api/documents.create'
 ```
+
+Substitua:
+- `API_TOKEN` - obtenha um token de API em /settings/tokens
+- `YOUR_COLLECTION_ID` - ID da coleção onde o documento será criado
+- `seudominio.com` - o endereço da sua instância do GovWiki
+
+Para mais detalhes sobre a API, consulte a documentação completa em /api/docs após fazer login na sua instância.
 

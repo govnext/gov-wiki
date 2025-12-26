@@ -14,6 +14,7 @@ import presentImport from "./import";
 import presentIntegration from "./integration";
 import presentMembership from "./membership";
 import presentOAuthClient, { presentPublishedOAuthClient } from "./oauthClient";
+import presentOnboardingTemplate from "./onboardingTemplate";
 import presentPin from "./pin";
 import presentPolicies from "./policy";
 import presentProviderConfig from "./providerConfig";
@@ -25,6 +26,7 @@ import presentShare from "./share";
 import presentStar from "./star";
 import presentSubscription from "./subscription";
 import presentTeam from "./team";
+import presentTeamOnboardingSetting from "./teamOnboardingSetting";
 import presentUser from "./user";
 import presentView from "./view";
 
@@ -46,6 +48,7 @@ export {
   presentMembership,
   presentOAuthClient,
   presentPublishedOAuthClient,
+  presentOnboardingTemplate,
   presentPublicTeam,
   presentPin,
   presentPolicies,
@@ -57,6 +60,7 @@ export {
   presentStar,
   presentSubscription,
   presentTeam,
+  presentTeamOnboardingSetting,
   presentUser,
   presentView,
 };

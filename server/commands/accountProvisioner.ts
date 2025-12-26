@@ -203,8 +203,8 @@ async function provisionFirstCollection(team: Team, user: User) {
   await sequelize.transaction(async (transaction) => {
     const collection = await Collection.create(
       {
-        name: "Welcome",
-        description: `This collection is a quick guide to what ${env.APP_NAME} is all about. Feel free to delete this collection once your team is up to speed with the basics!`,
+        name: "Bem-vindo ao GovWiki",
+        description: `Esta coleção é um guia rápido sobre o ${env.APP_NAME} e como usar a plataforma para gestão de conhecimento em órgãos públicos. Sinta-se à vontade para deletar esta coleção uma vez que sua equipe esteja familiarizada com o sistema!`,
         teamId: team.id,
         createdById: user.id,
         sort: Collection.DEFAULT_SORT,
